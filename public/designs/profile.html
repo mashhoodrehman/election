@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Student Profile</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="select2/dist/css/select2.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/owlcarousel/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="assets/owlcarousel/assets/owl.theme.default.min.css">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/font-awesome.css" rel="stylesheet">
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" media="screen" />
+</head>
+
+<body>
+
+<header>
+
+    <div class="container menu_con">
+
+        <nav class="display-md">
+
+
+            <div class="collapse navbar-collapse" id="navigationbar">
+
+
+                <a  href="index.html"> <img src="images/TSBS_logo.png" alt="TSBS logo" class="logoImg"></a>
+
+
+                <ul class="nav navbar-nav">
+
+                    <li class="nav-login">
+                        <a data-toggle="modal" data-target="#myModal">login</a>
+                    </li>
+                    <li class="nav-login">
+                        <a data-toggle="modal" data-target="#registerModal" >Register</a>
+                    </li>
+                    <li class="nav-login navDonate">
+
+
+                        <button type="submit" class="btn donateButton" data-toggle="modal" data-target="#ratingModal">Donate Now</button>
+                    </li>
+                </ul>
+
+            </div>
+
+            <div class="col-md-12 col-sm-12 col-xs-12 mob-md">
+
+
+                <div class="col-xs-12">
+                                <span class=" col-xs-12 col-sm-12 mob-img">
+          <a  href="index.html"><img src="images/TSBS_logo.png" alt="TSBS logo" class="mob_logo"></a>
+        </span>
+                </div>
+
+
+
+                <div class="col-xs-12 mobDisplay">
+
+        <span class="col-xs-12 col-sm-6 mob-login">
+          <a data-toggle="modal" data-target="#myModal" >login</a>
+        </span>
+                    <span class="col-xs-12 col-sm-6 mob-register">
+          <a data-toggle="modal" data-target="#registerModal" >Register</a>
+        </span>
+                </div>
+                <div class="col-xs-12 mobDonate">
+                    <button type="submit" class="btn donateButton" data-toggle="modal" data-target="#ratingModal">Donate Now</button>
+                </div>
+
+            </div>
+
+
+        </nav>
+    </div>
+</header>
+<div class="content">
+    <section>
+
+        <div id="profile" class="editProfile">
+            <div class="container">
+
+
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 avatarHead">
+
+
+                    <div class="school-heading">
+                        <h1>
+                            Student profile
+                        </h1>
+                        <p>
+                            Please provide the required details
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+
+
+            </div>
+        </div>
+
+    </section>
+    <section>
+
+        <div id="profile" class="profile-content">
+            <div class="container">
+
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="col-lg-2 col-md-1 col-sm-12 col-xs-12"> </div>
+                    <div class="col-lg-4 col-md-5 col-sm-12 col-xs-12">
+                        <div class="img-change">
+                            <input type="image" src="images/stdprofile.jpg" class="rounded-img"/>
+                            <input type="file" id="my_file" style="display: none;" />
+
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-5 col-sm-12 col-xs-12">
+
+                        <div class="img-change">
+                            <h1>Aaron hill</h1>
+                            <p>aaronhill@gmail.com</p>
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+
+
+
+                <form class="form-profile">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 form-adjust">
+
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                            <div class="input-group search-input profile-input col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <input type="text" class="form-control input-control profile-rad" placeholder="First Name" required>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                            <div class="input-group search-input profile-input col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <input type="password" class="form-control input-control profile-rad" placeholder="Last Name" required>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 field-adjust">
+
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                            <div class="input-group search-input profile-input col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <input type="email" class="form-control input-control  profile-read profile-rad" value="aaronhill@gmail.com" required>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                            <div class="input-group search-input profile-input col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <input type="text" class="form-control input-control profile-read profile-rad" value="STUDENT" required readonly>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 field-adjust">
+
+
+
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                            <div class="input-group search-input profile-input col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <input type="text" class="form-control input-control profile-rad" placeholder="City" required>
+                            </div>
+                        </div>
+
+
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                            <div class="input-group search-input profile-input col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <input type="text" class="form-control input-control profile-rad" placeholder="State" required>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 field-adjust">
+
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                            <div class="input-group searchinput profile-input school-descript col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+
+
+                                <select class="state-dropdown">
+                                    <option></option>
+                                    <option value="AL">Alabama</option>
+                                    <option value="AL">Alabama</option>
+                                    <option value="AL">Australia</option>
+                                    <option value="AL">united kingdom</option>
+                                    <option value="AL">Australia</option>
+                                    <option value="AL">Pakistan</option>
+                                    <option value="AL">Australia</option>  <option value="AL">Alabama</option>
+                                    <option value="AL">Alabama</option>
+                                    <option value="AL">Australia</option>
+                                    <option value="AL">united kingdom</option>
+                                    <option value="AL">Australia</option>
+                                    <option value="AL">Pakistan</option>
+                                    <option value="AL">Australia</option>  <option value="AL">Alabama</option>
+                                    <option value="AL">Alabama</option>
+                                    <option value="AL">Australia</option>
+                                    <option value="AL">united kingdom</option>
+                                    <option value="AL">Australia</option>
+                                    <option value="AL">Pakistan</option>
+                                    <option value="AL">Australia</option>  <option value="AL">Alabama</option>
+                                    <option value="AL">Alabama</option>
+                                    <option value="AL">Australia</option>
+                                    <option value="AL">united kingdom</option>
+                                    <option value="AL">Australia</option>
+                                    <option value="AL">Pakistan</option>
+                                    <option value="AL">Australia</option>  <option value="AL">Alabama</option>
+                                    <option value="AL">Alabama</option>
+                                    <option value="AL">Australia</option>
+                                    <option value="AL">united kingdom</option>
+                                    <option value="AL">Australia</option>
+                                    <option value="AL">Pakistan</option>
+                                    <option value="AL">Australia</option>  <option value="AL">Alabama</option>
+                                    <option value="AL">Alabama</option>
+                                    <option value="AL">Australia</option>
+                                    <option value="AL">united kingdom</option>
+                                    <option value="AL">Australia</option>
+                                    <option value="AL">Pakistan</option>
+                                    <option value="AL">Australia</option>
+                                    </optgroup>
+                                </select>
+
+                            </div>
+                        </div>
+
+
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                            <div class="input-group search-input profile-input col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <input type="text" class="form-control input-control profile-rad" placeholder="Grade level" required>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 prof-button-adjust">
+
+
+
+                        <button type="submit" class=" col-lg-offset-5 col-lg-2 col-md-offset-4 col-md-4 col-sm-offset-3 col-sm-6 col-xs-offset-2 col-xs-8 btn input-button btn-lg">Update</button>
+
+                    </div>
+
+                </form>
+
+
+
+
+            </div>
+        </div>
+
+    </section>
+
+</div>
+
+<footer>
+
+    <div class="container upper-footer">
+        <div class="roww">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+                <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 upper-left">
+                    <h4>About us</h4>
+                    <p>
+
+                        Growing up, school was always a safe place for me. Some of my fondest childhood
+
+                        memories were shaped by loving and kind teachers that fostered me to become a
+
+                        strong, independent, and confident student of life. Many, many years later when I became a
+
+                        parent and my own children entered school, I expected them to have a similar
+
+                        experience....<a href="about-us.html" class="read_more">Read More</a>
+                    </p>
+                </div>
+                <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 upper-right">
+                    <div class="col-lg-5 col-md-6 col-sm-6  col-xs-12 footer-pages">
+<span>
+  <a href="#">Terms of Use</a>
+ <br>
+  <a href="">Privacy Policy</a>
+ <br>
+  <a href="">FAQ</a>
+</span>
+
+
+                    </div>
+
+                    <div class="col-lg-7 col-md-6 col-sm-6  col-xs-12 footer-pages social-pages">
+
+              
+<span>
+ <a href="#"><i class="fa fa-envelope" aria-hidden="true"></i>info@teachingSBS.com</a>
+ <br>
+  <a href="https://www.facebook.com/teachingsbs" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i>facebook.com/teachingsbs</a>
+<br>
+  <a href="https://www.twitter.com/teachingsbs" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i>twitter.com/teachingsbs</a>
+</span>
+
+                    </div>
+                </div>
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="footer-container">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 bottom-footer">
+
+                    <h5>Copyright 2017 Teaching Side By Side. All Rights Reserved.</h5>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</footer>
+
+
+
+
+
+
+<!-- Modal content login-->
+<div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-login">
+
+
+        <div class="modal-content">
+            <div class="modalBorder">
+                <div class="modal-header">
+
+                    <h4 class="modal-title"></h4>
+                </div>
+                <div class="modal-body">
+                    <div class="login-modal">
+
+                        <h3>login</h3>
+
+                        <form class="form-signin">
+                            <div class="input-group search-input col-xs-offset-1 col-xs-10">
+                                <input type="text" class="form-control input-control login-input" placeholder="USERNAME" required>
+                            </div>
+                            <div class="input-group search-input login-input col-xs-offset-1 col-xs-10">
+                                <input type="password" class="form-control input-control login-input" placeholder="PASSWORD" required>
+                            </div>
+
+
+                            <div class="forget-modal col-xs-offset-1 col-xs-10">
+                                <a data-toggle="modal" data-target="#forgetModal" data-dismiss="modal">Forgot Password?</a>
+                            </div>
+
+
+
+                    </div>
+
+
+                </div>
+                <div class="modal-footer">
+                    <div class="login-button">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <button type="submit" class=" col-lg-offset-4 col-lg-4 col-md-offset-3 col-md-6 col-sm-offset-3 col-sm-6 col-xs-offset-1 col-xs-10 btn popBtn input-button">Login</button>
+                        </div>
+
+
+                        <br>
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <p>New User?<a data-toggle="modal" data-target="#registerModal" data-dismiss="modal">Register</a></p>
+                        </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- Modal content Register-->
+<div id="registerModal" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-login">
+
+        <div class="modal-content">
+            <div class="modalBorder">
+
+                <div class="modal-header">
+
+                    <h4 class="modal-title"></h4>
+                </div>
+
+
+
+                <div class="modal-body">
+                    <div class="login-modal">
+
+
+
+
+                        <h3>Register</h3>
+
+
+
+
+                        <ul class="nav nav-pills nav-registration col-lg-offset-1 col-lg-10 col-md-offset-1 col-md-10 col-sm-offset-1 col-sm-10 col-xs-offset-1 col-xs-10">
+
+
+                            <li class="col-lg-6 col-md-6 col-sm-6 col-xs-12 nav-register regRight active"><a class="" data-toggle="pill" href="#student">Student</a></li>
+                            <li class="col-lg-6 col-md-6 col-sm-6 col-xs-12 nav-register regLeft pull-right"><a data-toggle="pill" href="#parent">Parent</a></li>
+
+                        </ul>
+
+                        <div class="tab-content">
+                            <div id="student" class="tab-pane fade in active">
+
+
+                                <form class="form-signin">
+                                    <div class="input-group search-input col-lg-10 col-md-offset-1 col-md-10 col-sm-offset-1 col-sm-10 col-xs-offset-1 col-xs-10">
+                                        <input type="email" class="form-control input-control login-input" placeholder="EMAIL" required>
+                                    </div>
+                                    <div class="input-group search-input login-input col-lg-10 col-md-offset-1 col-md-10 col-sm-offset-1 col-sm-10 col-xs-offset-1 col-xs-10">
+                                        <input type="password" class="form-control input-control login-input" placeholder="PASSWORD" required>
+                                    </div>
+
+                                    <div class="modal-footer">
+                                        <div class="login-button">
+                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 loginAlign">
+                                                <button type="submit" class=" col-lg-offset-4 col-lg-4 col-md-offset-3 col-md-6 col-sm-offset-3 col-sm-6 col-xs-offset-1 col-xs-10 btn regBtn input-button">Register</button>
+                                            </div>
+
+
+                                            <br>
+                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                <p>Already have an account?<a data-toggle="modal" data-target="#myModal" data-dismiss="modal">Sign In</a></p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </form>
+
+                            </div>
+
+
+
+                            <div id="parent" class="tab-pane fade">
+
+
+                                <form class="form-signin">
+                                    <div class="input-group search-input col-lg-10 col-md-offset-1 col-md-10 col-sm-offset-1 col-sm-10 col-xs-offset-1 col-xs-10">
+                                        <input type="email" class="form-control input-control login-input" placeholder="EMAIL" required>
+                                    </div>
+                                    <div class="input-group search-input login-input col-lg-10 col-md-offset-1 col-md-10 col-sm-offset-1 col-sm-10 col-xs-offset-1 col-xs-10">
+                                        <input type="password" class="form-control input-control login-input" placeholder="PASSWORD" required>
+                                    </div>
+
+                                    <div class="modal-footer">
+                                        <div class="login-button">
+                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 loginAlign">
+                                                <button type="submit" class=" col-lg-offset-4 col-lg-4 col-md-offset-3 col-md-6 col-sm-offset-3 col-sm-6 col-xs-offset-1 col-xs-10 btn regBtn input-button">Register</button>
+                                            </div>
+
+
+                                            <br>
+                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                <p>Already have an account?<a data-toggle="modal" data-target="#myModal" data-dismiss="modal">Sign In</a></p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </form>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Modal content register-->
+
+
+
+<!-- Modal content forget pasword-->
+<div id="forgetModal" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-login">
+
+
+        <div class="modal-content">
+            <div class="modalBorder">
+                <div class="modal-header">
+
+                    <h4 class="modal-title"></h4>
+                </div>
+                <div class="modal-body">
+                    <div class="login-modal forgetPswrd">
+
+                        <h3>Forgot password</h3>
+                        <p>Please Provide Your Registered Email</p>
+
+                        <form class="form-signin">
+                            <div class="input-group search-input col-xs-offset-1 col-xs-10">
+                                <input type="email" class="form-control input-control reset-rad login-input" placeholder="email address" required>
+                            </div>
+
+                    </div>
+
+
+                </div>
+                <div class="modal-footer">
+                    <div class="login-button">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <button type="submit" class=" col-lg-offset-4 col-lg-4 col-md-offset-3 col-md-6 col-sm-offset-3 col-sm-6 col-xs-offset-1 col-xs-10 btn forgetBtn popBtn input-button">Submit</button>
+                        </div>
+
+
+                        <br>
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <p class="forgetAccount">Already have account?<a data-toggle="modal" data-target="#myModal" data-dismiss="modal">Sign in</a></p>
+                        </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Modals end-->
+
+<script src="assets/vendors/jquery.min.js"></script>
+
+<script src="select2/dist/js/select2.min.js"></script>
+<script src="assets/owlcarousel/owl.carousel.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/custom.js"></script>
+
+<script src="assets/vendors/highlight.js"></script>
+<script src="assets/js/app.js"></script>
+
+
+
+
+</body>
+</html>

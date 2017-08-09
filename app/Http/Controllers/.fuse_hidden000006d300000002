@@ -1,0 +1,232 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use App\Teacher;
+use App\School;
+use App\User;
+use App\Contents;
+use carbon\carbon;
+use Redirect;
+use Toastr;
+use Alert;
+use Auth;
+use DB;
+class HomeController extends Controller
+{
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+
+
+
+    }
+
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
+
+        if(Auth::user()){
+            if(Auth::user()->role == "admin"){
+                return redirect('/admin/dashboard');
+            }elseif(Auth::user()->role == "student" || Auth::user()->role == "parent"){
+                $states = DB::table('states')->pluck('state_name','state_id')->all();
+            $teachers = Teacher::orderBy('id','DESC')->with('schools')->get();
+            return view('user.home.home', compact('states','teachers'));
+            }
+            else{
+                
+                $teachers = Teacher::orderBy('id','DESC')->with('schools')->get();
+            
+                $states = DB::table('states')->pluck('state_name','state_id')->all();
+
+            
+            return view('user.home.home', compact('states','teachers'));
+            }
+        }
+        else
+        {
+            
+
+            $teachers = Teacher::orderBy('id','DESC')->with('schools')->take(8)->get();
+           
+            
+            
+
+            $states = DB::table('states')->pluck('state_name','state_id')->all();
+            
+            return view('user.home.home', compact('states','teachers'));
+        }
+       
+    }
+
+
+    public function myformAjax($id)
+
+    {
+
+        $cities = DB::table('cities')
+
+                    ->where('state_id',$id)
+
+                    ->pluck('city_name','city_id')->all();
+
+        return json_encode($cities);
+
+}
+    public function about()
+    {
+        return view('user.aboutus.aboutus');
+
+    }
+
+    public function viewpolicy()
+    {
+        try{
+            
+            $content_obj =  Contents::first();
+            if(isset($content_obj)){
+                $data=$content_obj->policy;
+                return view('user.contents.policy',compact('data'));
+            }else{
+                $data="<h1>No Content Found!</h1>";
+                return view('Admin.content.policy',compact('data'));
+            }               
+
+          
+        } catch ( \Exception $exp ) {
+            Toastr::success($exp->getMessage(), $title = 'Error', $options = []);
+            return redirect ()->back()->with('status', $exp->getMessage());
+        }
+    }
+    public function viewterms()
+    {
+        try{
+            
+            $content_obj =  Contents::first();
+            if(isset($content_obj)){
+                $data=$content_obj->terms;
+                return view('user.contents.terms',compact('data'));
+            }else{
+                $data="<h1>No Content Found!</h1>";
+                return view('Admin.content.terms',compact('data'));
+            }               
+
+          
+        } catch ( \Exception $exp ) {
+            Toastr::success($exp->getMessage(), $title = 'Error', $options = []);
+            return redirect ()->back()->with('status', $exp->getMessage());
+        }
+    }
+    public function viewfaqs()
+    {
+        try{
+            
+            $content_obj =  Contents::first();
+            if(isset($content_obj)){
+                $data=$content_obj->faqs;
+                return view('user.contents.faqs',compact('data'));
+            }else{
+                $data="<h1>No Content Found!</h1>";
+                return view('Admin.content.terms',compact('data'));
+            }               
+
+          
+        } catch ( \Exception $exp ) {
+            Toastr::success($exp->getMessage(), $title = 'Error', $options = []);
+            return redirect ()->back()->with('status', $exp->getMessage());
+
+}
+}
+    public function search(Request $request){
+        
+        try{
+            // dd($request->state);
+            // School data
+                $query = School::orderBy('id','DESC');
+
+                if ($request->keyword) {
+                    $name = $request->keyword;
+
+                $query->where(function ($q) use ($name) {
+                $q->where('name', 'like', "$name%");
+                });
+
+                }
+
+                if ($request->city) {
+                $query->where('city', '=' , $request->city);
+                }
+                
+                if (!empty($request->state)) {
+                $query->where('state', '=',$request->state);
+                
+                }
+                if ($request->zip) {
+                $query->where('zip', $request->zip);
+                }
+
+                
+                $schools = $query->paginate(4);
+                
+          
+
+                // $teach = $schools->with('teachers')->all();
+                
+
+// Teacher data
+                $quer = DB::table('teachers')->select('*');
+
+                if ($request->keyword) {
+                    $name = $request->keyword;
+                $quer->where(function ($q) use ($name) {
+                $q->where('name', 'like', "$name%");
+                });
+                }
+
+                if ($request->city) {
+                $quer->where('city', '=' , $request->city);
+                }
+                
+                if ($request->state) {
+
+                $quer->where('state', '=',$request->state);
+                }
+                if ($request->zip) {
+                $quer->where('zip', $request->zip);
+                }
+
+                
+                $teachers = $quer->paginate(4);
+                
+                $states = DB::table('states')->pluck('state_name','state_id')->all();
+                return view('user.Search.search',compact('teachers', 'schools','states'));
+
+
+                
+        } catch ( \Exception $exp ) {
+        return redirect ()->back()->with('status', $exp->getMessage());
+        }
+    } 
+
+    public function getSchool(Request $request){
+        $schools = School::orderBy('id','DESC')->select('*')->where('state','=',$request->stateNameSearch)->paginate(4);
+        
+        $states = DB::table('states')->pluck('state_name','state_id')->all();
+        $teachers = DB::table('teachers')->select('*')->where('state','=',$request->stateNameSearch)->paginate(4);
+        
+        return view('user.Search.search',compact('teachers', 'schools','states'));
+    }    
+   
+}
+
+

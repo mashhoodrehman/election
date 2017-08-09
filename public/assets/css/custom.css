@@ -1,0 +1,13 @@
+.error_msg{
+	color: maroon; 
+}
+.view_image{
+	margin: 0px;
+	margin-bottom:10px; 
+}
+.error_messages{
+	color: #a94442 !important;
+}
+#teacher_links,#school_links{
+	text-align: center;
+}

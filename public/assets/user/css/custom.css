@@ -1,0 +1,10 @@
+
+.dropdown_custom{
+	display: block;
+    max-height: 145px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+.remove_margin{
+	margin-bottom: 0px; 
+}
